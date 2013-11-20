@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+	Jefferson Lam
+	11-19-13
+	jQuery : Add User
+-->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery : Add User</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	
+	<link rel="stylesheet" type="text/css" href="global.css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!--jQuery-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+		    $("form").submit(function(){
+		    	if ($("input[type=text]").val()){
+			    	$("table").append("<tr><td>"+$("form input[name=firstname]").val()+"</td><td>"+$("form input[name=lastname]").val()+"</td><td>"+$("form input[name=email]").val()+"</td><td><span class='skype'><span class='glyphicon glyphicon-earphone'></span> +"+$("form input[name=contact]").val()+"</span></td></tr>");
+			    	$("input[type=text]").val('');
+			    	$(".alert").hide();
+			    	return false;
+	   			}
+	   			$(".alert").html("Please fill in all fields").show();
+	   			return false;
+  			});
+    	});
+    </script>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email Address</th>
+						<th>Contact #</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John Oliver</td>
+						<td>Rosales</td>
+						<td>jrosales@village88.com</td>
+						<td><span class="skype"><span class="glyphicon glyphicon-earphone"></span> +63 918 123 1234</span></td>
+					</tr>
+					<tr>
+						<td>KB</td>
+						<td>Tonel</td>
+						<td>kotnel@village88.com</td>
+						<td><span class="skype"><span class="glyphicon glyphicon-earphone"></span> +63 922 987 6543</span></td>
+					</tr>
+					<tr>
+						<td>Michael</td>
+						<td>Choi</td>
+						<td>mchoi@village88.com</td>
+						<td><span class="skype"><span class="glyphicon glyphicon-earphone"></span> +1800 936 5700</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<form class="form-horizontal">
+				<label>First Name <input name="firstname" type="text" class="form-control" placeholder="First name" ></label>
+				
+				<label>Last Name <input name="lastname" type="text" class="form-control" placeholder="Last name" ></label>
+				
+				<label>Email Address <input name="email" type="text" class="form-control" placeholder="email@example.com" ></label>
+				
+				<label>Contact No. <input name="contact" type="text" class="form-control" placeholder="555 555 5555"></label>
+				<br>
+				<div class="alert-area"><div class="alert"></div></div>
+				<input type="submit" id="submit" value="Submit" class="btn btn-large btn-primary">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

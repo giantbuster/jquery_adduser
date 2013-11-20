@@ -1,0 +1,25 @@
+.content{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.content form{
+	text-align: center;
+}
+
+label, input{
+	display: block;
+	margin: 30px;
+}
+
+.skype{
+	color: #34A1DE;
+}
+
+.alert{
+	color: #DE4F5D;
+}
+
+.alert-area{
+	height: 50px;
+}
